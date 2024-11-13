@@ -4,6 +4,6 @@
 
     public class GameLocalData : ILocalData
     {
-        
+        public int currentLevel = 1;
     }
 }

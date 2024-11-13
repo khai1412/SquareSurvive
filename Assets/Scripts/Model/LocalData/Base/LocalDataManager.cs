@@ -14,12 +14,12 @@
             DontDestroyOnLoad(this);
         }
         
-        private Dictionary<string, ILocalData> localDataCached = new();
+        private readonly Dictionary<string, ILocalData> localDataCached = new();
 
-        public ILocalData GetLocalData<TData>()
+        public TData GetLocalData<TData>() where TData : class, ILocalData
         {
             if (!this.localDataCached.TryGetValue(typeof(TData).Name, out var localData)) throw new Exception($"can not find this data {typeof(TData).Name}");
-            return this.localDataCached[typeof(TData).Name];
+            return this.localDataCached[typeof(TData).Name] as TData;
         }
 
         private void AddOrUpdateLocalData(string key, ILocalData localData)
