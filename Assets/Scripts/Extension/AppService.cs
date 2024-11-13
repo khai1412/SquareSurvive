@@ -8,6 +8,7 @@
         private void Awake()
         {
             DontDestroyOnLoad(this);
+            Application.targetFrameRate = 90;
         }
         private void OnApplicationPause(bool pauseStatus)
         {

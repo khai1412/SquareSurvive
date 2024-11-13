@@ -10,6 +10,6 @@ public class GameConfig
         if (data == null)
             data = Resources.Load<GameConfigSO>("GameConfig");
         Debug.Log("Gameconfig: " + data == null);
-        Application.targetFrameRate = 90;
+        
     }
 }
