@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d4eb8f8713a69d4b8ebac1b16cf65e7, type: 3}
   m_Name: GameConfig
   m_EditorClassIdentifier: 
+  basePath: F:\Unity Project\SquareSurvive\Assets\Resources\
   initialSpeed: 15
   colors:
   - {r: 1, g: 0.390566, b: 0.390566, a: 1}
