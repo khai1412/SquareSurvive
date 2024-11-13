@@ -6,7 +6,7 @@
     using Newtonsoft.Json;
     using UnityEngine;
 
-    public class LocalDataManager : Singleton<LocalDataManager>
+    public class LocalDataManager : SingletonMono<LocalDataManager>
     {
         protected override void Awake()
         {

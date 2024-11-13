@@ -1,10 +1,8 @@
 ﻿namespace Extension
 {
-    using UnityEngine;
-
-    public class Singleton<T> : MonoBehaviour where T : MonoBehaviour  
+    public class Singleton<T> where T : new()
     {
-        private static T instant = null;
+        private static T instant;
         
         public static T Instant
         {
@@ -12,18 +10,10 @@
             {
                 if (instant == null)
                 {
-                    instant = FindObjectOfType<T>();
+                    instant = new T();
                 }
                 return instant;
             }
-        } 
-       
-        protected virtual void Awake()
-        {
-            if (instant != null && instant.gameObject.GetInstanceID() != this.gameObject.GetInstanceID())
-                Destroy(this.gameObject);
-            else
-                instant = this.GetComponent<T>();
         }
     }
 }

@@ -1,8 +1,9 @@
 ﻿namespace Managers
 {
+    using Extension;
     using UnityEngine;
     
-    public class GenerateMapLevelManager : MonoBehaviour
+    public class GenerateMapLevelManager : SingletonMono<GenerateMapLevelManager>
     {
         
     }
