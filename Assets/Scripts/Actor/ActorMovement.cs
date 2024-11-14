@@ -23,12 +23,12 @@ public class ActorMovement : ActorComponent
             this.Stop();
             return;
         }
-        rb.velocity = direction * speed;
+        //rb.velocity = direction * speed;
     }
-    public void Die()
+    public void Disable()
     {
         Stop();
-        GetComponent<Collider2D>().enabled = false;
+        GetComponent<BoxCollider2D>().enabled = false;
     }
     public void Stop()
     {
@@ -37,14 +37,14 @@ public class ActorMovement : ActorComponent
     }
     private void Update()
     {
-        //Move();
+        Move();
     }
 
     private void Move() { transform.Translate(this.direction * this.speed * Time.deltaTime); }
     private void OnCollisionEnter2D(Collision2D other)
     {
-        //this.direction = Vector2.Reflect(this.direction, other.contacts[0].normal);
-        //Debug.Log("Collide",other.gameObject);
+        this.direction = Vector2.Reflect(this.direction, other.contacts[0].normal);
+        Debug.Log("Collide", other.gameObject);
     }
 
     public void SetDirection(Vector2 direction) { this.direction = direction; }
