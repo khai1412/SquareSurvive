@@ -18,6 +18,7 @@ public class Actor : MonoBehaviour
         movement.Die();
         color.SetColor(Color.black);
     }
+    
     private void OnValidate()
     {
         this.movement = this.GetComponent<ActorMovement>();

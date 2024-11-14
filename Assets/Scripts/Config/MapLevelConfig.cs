@@ -1,4 +1,4 @@
-﻿namespace Managers
+﻿namespace Config
 {
     using System;
     using System.Collections.Generic;

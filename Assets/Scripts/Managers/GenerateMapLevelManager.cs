@@ -1,5 +1,6 @@
 ﻿namespace Managers
 {
+    using Config;
     using Elements.Map;
     using Extension;
     using UnityEngine;
