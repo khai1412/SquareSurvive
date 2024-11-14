@@ -3,6 +3,7 @@ using UnityEngine;
 public class GameConfigSO : ScriptableObject
 {
     public string basePath;
-    public float   initialSpeed =1;
+    public float initialSpeed = 1;
     public Color[] colors;
+    public float maxStayTime = 0.5f;
 }

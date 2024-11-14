@@ -15,7 +15,7 @@ public class Actor : MonoBehaviour
     }
     public void Die()
     {
-        movement.Die();
+        movement.Disable();
         color.SetColor(Color.black);
     }
     
@@ -23,5 +23,13 @@ public class Actor : MonoBehaviour
     {
         this.movement = this.GetComponent<ActorMovement>();
         this.color    = this.GetComponent<ActorColor>();
+    }
+
+    public void Finish()
+    {
+        movement.Disable();
+        color.SetColor(Color.white);
+        //do something better here
+        Debug.Log("Finish");
     }
 }

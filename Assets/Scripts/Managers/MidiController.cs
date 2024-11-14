@@ -27,7 +27,6 @@ public class MidiController : SingletonMono<MidiController>
                 if (!ticks.Contains(e.Tick))
                 {
                     ticks.Add(e.Tick);
-                    Debug.Log(e.Value);
                 }
             }
         }
