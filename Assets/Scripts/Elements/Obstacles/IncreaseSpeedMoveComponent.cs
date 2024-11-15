@@ -13,5 +13,14 @@
                 actor.movement.ChangeSpeed(this.additionSpeed);
             }
         }
+        private void Start()
+        {
+            OnValidate();
+        }
+        public void OnValidate()
+        {
+            Vector2 size = GetComponent<SpriteRenderer>().size;
+            GetComponent<BoxCollider2D>().size = size;
+        }
     }
 }

@@ -18,6 +18,6 @@ public class ActorEffect : MonoBehaviour
     {
         sr.DOKill();
         sr.color = yellow;
-        sr.DOFade(1, 0.1f).SetLoops(2, LoopType.Yoyo);
+        sr.DOFade(1, 0.05f).SetLoops(2, LoopType.Yoyo);
     }
 }
