@@ -28,7 +28,7 @@ public class Actor : MonoBehaviour
     public void Finish()
     {
         movement.Disable();
-        color.SetColor(Color.white);
+        color.Finish();
         //do something better here
         Debug.Log("Finish");
     }

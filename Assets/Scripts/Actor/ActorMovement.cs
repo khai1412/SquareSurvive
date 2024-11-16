@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,23 +7,25 @@ using UnityEngine;
 public class ActorMovement : ActorComponent
 {
     [SerializeField] Rigidbody2D rb;
-    private          Vector2     direction;
+    //Vector2 direction;
     private          float       speed;
     public void StartMove()
     {
         speed          = GameConfig.data.initialSpeed;
-        this.direction = new Vector2(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f)).normalized;
+        Vector2 direction = new Vector2(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f)).normalized;
         rb.velocity    = direction * speed;
     }
 
     public void ChangeSpeed(float newSpeed)
     {
-        this.speed  = this.speed + newSpeed >= 0 ? this.speed + newSpeed : 0;
-        if (this.speed == 0)
-        {
-            this.Stop();
-            return;
-        }
+        //this.speed  = this.speed + newSpeed >= 0 ? this.speed + newSpeed : 0;
+        //if (this.speed == 0)
+        //{
+        //    this.Stop();
+        //    return;
+        //}
+        if (rb.velocity.magnitude > 40) return;
+        rb.velocity *= ((speed + newSpeed) / speed);
         //rb.velocity = direction * speed;
     }
     public void Disable()
@@ -32,23 +35,23 @@ public class ActorMovement : ActorComponent
     }
     public void Stop()
     {
-        speed       = 0;
+        speed = 0;
+        //DOVirtual.Float(speed, 0, 0.25f, x => { speed = x; }).SetEase(Ease.OutSine);
         rb.velocity = Vector2.zero;
     }
     private void Update()
     {
-        Move();
+        //Move();
     }
 
-    private void Move() { transform.Translate(this.direction * this.speed * Time.deltaTime); }
+    private void Move() { 
+        //transform.Translate(this.direction * this.speed * Time.deltaTime); 
+    }
     private void OnCollisionEnter2D(Collision2D other)
     {
-        this.direction = Vector2.Reflect(this.direction, other.contacts[0].normal);
-        Debug.Log("Collide", other.gameObject);
+         //this.direction = Vector2.Reflect(this.direction, other.contacts[0].normal);
+        //Debug.Log("Collide", other.gameObject);
     }
 
-    public void SetDirection(Vector2 direction) { this.direction = direction; }
-
-    public  void SetSpeed(float speed) { this.speed = speed; }
     private void OnValidate()          { rb         = GetComponent<Rigidbody2D>(); }
 }
