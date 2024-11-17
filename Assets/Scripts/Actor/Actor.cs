@@ -10,7 +10,6 @@ public class Actor : MonoBehaviour
     public  ActorColor    color;
     private void Start()
     {
-        this.color.SetColor(GameConfig.data.colors.Random());
         this.movement.StartMove();
     }
     public void Die()

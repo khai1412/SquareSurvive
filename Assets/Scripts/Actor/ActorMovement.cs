@@ -2,6 +2,7 @@ using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class ActorMovement : ActorComponent
@@ -16,7 +17,7 @@ public class ActorMovement : ActorComponent
         rb.velocity    = direction * speed;
     }
 
-    public void ChangeSpeed(float newSpeed)
+    public async void ChangeSpeed(float newSpeed)
     {
         //this.speed  = this.speed + newSpeed >= 0 ? this.speed + newSpeed : 0;
         //if (this.speed == 0)
@@ -26,6 +27,10 @@ public class ActorMovement : ActorComponent
         //}
         if (rb.velocity.magnitude > 40) return;
         rb.velocity *= ((speed + newSpeed) / speed);
+        speed += newSpeed;
+        await Task.Delay(3000);
+        speed = GameConfig.data.initialSpeed;
+        rb.velocity= rb.velocity.normalized * speed;
         //rb.velocity = direction * speed;
     }
     public void Disable()

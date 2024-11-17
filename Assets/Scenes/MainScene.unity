@@ -332,6 +332,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2181593691226348510, guid: 7663127e5018768449f82692a063213b, type: 3}
+      propertyPath: showMidiPlaying
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2181593691226348510, guid: 7663127e5018768449f82692a063213b, type: 3}
+      propertyPath: MPTK_EffectSoundFont
+      value: 
+      objectReference: {fileID: 1946716785}
+    - target: {fileID: 2181593691226348510, guid: 7663127e5018768449f82692a063213b, type: 3}
+      propertyPath: OnEventNotesMidi.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4566333311075190644, guid: 7663127e5018768449f82692a063213b, type: 3}
+      propertyPath: midiName
+      value: 3Time Back
+      objectReference: {fileID: 0}
     - target: {fileID: 4602646106478086413, guid: 7663127e5018768449f82692a063213b, type: 3}
       propertyPath: m_Name
       value: MidiController
@@ -531,6 +547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b7b4d501e4c47e2b5a1263b349ab504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentMapLevel: {fileID: 0}
 --- !u!4 &1047905335
 Transform:
   m_ObjectHideFlags: 0
@@ -682,6 +699,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1946716785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc2b118d1a6c1154983be5ee4bf1b510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  applySFReverb: 0
+  applySFChorus: 0
+  applySFFilter: 1
 --- !u!1 &1998108869
 GameObject:
   m_ObjectHideFlags: 0
