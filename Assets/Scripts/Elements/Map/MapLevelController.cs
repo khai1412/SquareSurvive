@@ -26,6 +26,11 @@
         private void Awake()
         {
             currentActors=GetComponentsInChildren<Actor>().ToList();
+            for (int i = 0; i < currentActors.Count; i++)
+            {
+                Actor actor = currentActors[i];
+                actor.color.SetColor(GameConfig.data.colors[i]);
+            }
         }
         public void StopGame() //khi 1 trong các 🟥 đi vào khu vực 🏁 đích, dừng màn hình? la timescale=0 hay stop all square
         {

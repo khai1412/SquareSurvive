@@ -14,7 +14,7 @@
         }
         private void OnTriggerEnter2D(Collider2D col)
         {
-            Debug.Log("OnTrigger",gameObject);
+            //Debug.Log("OnTrigger",gameObject);
             this.listBehaviourExecuteOnTriggerEnter.ForEach(e=>e.Execute(col));
         }
        
