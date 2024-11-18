@@ -2,6 +2,8 @@ using Elements.Obstacles;
 using Managers;
 using System.Collections;
 using System.Collections.Generic;
+using StateMachine;
+using StateMachine.States;
 using UnityEngine;
 
 public class GoalComponent : BaseActionBehaviour
@@ -12,7 +14,7 @@ public class GoalComponent : BaseActionBehaviour
         {
             var actor = col.GetComponent<Actor>();
             actor.Finish();
-            GenerateMapLevelManager.Instant.currentMapLevel.StopGame();
+            StateMachineManager.Instant.TransitionToState<GameEndState>();
         }
     }
     private void Start()

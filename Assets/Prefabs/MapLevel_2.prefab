@@ -676,7 +676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4905859826863397433, guid: d370de5ac223f224b885db195e641dd1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.74
+      value: -0.85
       objectReference: {fileID: 0}
     - target: {fileID: 4905859826863397433, guid: d370de5ac223f224b885db195e641dd1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -713,6 +713,10 @@ PrefabInstance:
     - target: {fileID: 6903548021909104509, guid: d370de5ac223f224b885db195e641dd1, type: 3}
       propertyPath: m_Name
       value: IncreaseSpeedObstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7491896371341023709, guid: d370de5ac223f224b885db195e641dd1, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -798,6 +802,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4098836132342602989}
     m_Modifications:
+    - target: {fileID: 6499048411535490802, guid: 95e3bf4b062d5604584765fbec38740f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7063762218571808850, guid: 95e3bf4b062d5604584765fbec38740f, type: 3}
       propertyPath: m_Name
       value: Goal
@@ -808,7 +816,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8781121606727449878, guid: 95e3bf4b062d5604584765fbec38740f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.9
+      value: 3.88
       objectReference: {fileID: 0}
     - target: {fileID: 8781121606727449878, guid: 95e3bf4b062d5604584765fbec38740f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -860,6 +868,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4098836132342602989}
     m_Modifications:
+    - target: {fileID: 4630758282697143006, guid: 26e9c81578aeb364aab56b06993c5611, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7182765956685427002, guid: 26e9c81578aeb364aab56b06993c5611, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.21
@@ -898,6 +910,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7182765956685427002, guid: 26e9c81578aeb364aab56b06993c5611, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7572775987669327022, guid: 26e9c81578aeb364aab56b06993c5611, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 7572775987669327022, guid: 26e9c81578aeb364aab56b06993c5611, type: 3}
+      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8679850766031359102, guid: 26e9c81578aeb364aab56b06993c5611, type: 3}

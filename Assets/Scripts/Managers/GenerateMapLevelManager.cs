@@ -8,7 +8,7 @@
     public class GenerateMapLevelManager : SingletonMono<GenerateMapLevelManager>
     {
         public            MapLevelController currentMapLevel;
-        private            MapLevelConfig     mapLevelConfig;
+        private           MapLevelConfig     mapLevelConfig;
         protected override void Awake()
         {
             base.Awake();

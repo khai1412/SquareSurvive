@@ -1,7 +1,6 @@
 using Extension;
 using MidiPlayerTK;
-using Sirenix.OdinInspector;
-using System.Collections;
+
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -42,7 +41,7 @@ public class MidiController : SingletonMono<MidiController>
         Debug.Log("Pause");
         player.MPTK_Pause();
     }
-    [Button]
+    //[Button]
     public async void PlayNext()
     {
         if (isPlaying) return;

@@ -16,7 +16,6 @@
         private void OnClickPlay()
         {
             StateMachineManager.Instant.TransitionToState<GamePlayState>();
-            this.playBtn.gameObject.SetActive(false);
         }
         
     }

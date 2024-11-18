@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: GameConfig
   m_EditorClassIdentifier: 
   basePath: F:\Unity Project\SquareSurvive\Assets\Resources\
-  initialSpeed: 15
+  initialSpeed: 5
   colors:
   - {r: 1, g: 0.390566, b: 0.390566, a: 1}
   - {r: 0.68912727, g: 1, b: 0.39215684, a: 1}
   - {r: 0.39215684, g: 0.6908195, b: 1, a: 1}
   - {r: 0.4860086, g: 0.39215684, b: 1, a: 1}
+  maxStayTime: 0.5
