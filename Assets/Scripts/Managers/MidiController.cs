@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class MidiController : SingletonMono<MidiController>
 {
-   [SerializeField] int index;
+    public static int index;
     [SerializeField] MidiFilePlayer player;
     [SerializeField] string midiName;
     [SerializeField] List<long> ticks = new();
