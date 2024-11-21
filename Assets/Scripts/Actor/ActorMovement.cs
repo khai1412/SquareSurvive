@@ -24,7 +24,8 @@ public class ActorMovement : ActorComponent
     public void Disable()
     {
         Stop();
-        GetComponent<Collider2D>().enabled = false;
+        // GetComponent<Collider2D>().enabled = false;
+        Destroy(this.gameObject);
     }
     public void Stop()
     {
