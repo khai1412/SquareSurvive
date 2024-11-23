@@ -12,7 +12,15 @@
 
         private void Awake()
         {
-            this.replayBtn.onClick.AddListener(this.OnReplayBtnClick);
+            //this.replayBtn.onClick.AddListener(this.OnReplayBtnClick);
+        }
+
+        private void Update()
+        {
+            if (Input.GetKey(KeyCode.Space))
+            {
+                StateMachineManager.Instant.TransitionToState<GameHomeState>();
+            }
         }
 
         private void OnReplayBtnClick()
