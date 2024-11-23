@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Managers;
 using UnityEngine;
 
 [RequireComponent(typeof(ActorMovement))]
@@ -18,6 +19,7 @@ public class Actor : MonoBehaviour
         movement.Disable();
         color.SetColor(Color.black);
         await Task.Delay(TimeSpan.FromSeconds(0.5f));
+        GenerateMapLevelManager.Instant.currentMapLevel.RemoveActor(this);
         Destroy(this.gameObject);
 
     }
