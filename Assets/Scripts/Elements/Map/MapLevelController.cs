@@ -2,12 +2,20 @@
 {
     using System.Collections.Generic;
     using System.Linq;
+    using StateMachine;
+    using StateMachine.States;
     using UnityEngine;
 
     public class MapLevelController : MonoBehaviour
     {
         public List<Actor> currentActors = new();
         public SpriteRenderer bound;
+        public void RemoveActor(Actor actor)
+        {
+            if(!this.currentActors.Contains(actor)) return;
+            this.currentActors.Remove(actor);
+            if(this.currentActors.Count == 0) StateMachineManager.Instant.TransitionToState<GameEndState>();
+        }
         void Start()
         {
             float screenRatio = (float)Screen.width / (float)Screen.height;
