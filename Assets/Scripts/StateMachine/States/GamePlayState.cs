@@ -11,6 +11,9 @@
         public void Enter()
         {
             Time.timeScale = 1;
+            MidiController.index = 0;
+            var currentLevel = LocalDataManager.Instant.GetLocalData<GameLocalData>().currentLevel;
+            GenerateMapLevelManager.Instant.GenerateMapLevel(currentLevel);
             UIManager.Instant.ActiveGameplayScreen();
         }
         public void Exit()
