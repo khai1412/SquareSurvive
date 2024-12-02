@@ -1,31 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ActorDeadHandler : ActorComponent
 {
     [SerializeField] GameObject deadIcon;
-    float stayTime;
-    int count = 0;
-    private void OnCollisionStay2D(Collision2D collision)
+
+    private void LateUpdate()
     {
-        if (collision.gameObject.CompareTag("MoveObstacle"))
+        Collider2D[] hits = Physics2D.OverlapBoxAll(transform.position, Vector2.one, 0, -1);
+        if (hits.Length >= 3)
         {
-            stayTime += Time.deltaTime;
-            if (stayTime > GameConfig.data.maxStayTime&&count>=2)
+            foreach(var hit in hits)
             {
-                deadIcon.SetActive(true);
-                actor.Die();
+                if(hit.CompareTag("MoveObstacle"))
+                {
+                    deadIcon.SetActive(true);
+                    actor.Die();
+                    return;
+                }
             }
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        count++;
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        stayTime = 0;
-        count--;
-    }
+
 }
