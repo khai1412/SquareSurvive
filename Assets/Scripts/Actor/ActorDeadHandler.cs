@@ -4,10 +4,10 @@ public class ActorDeadHandler : ActorComponent
 {
     [SerializeField] GameObject deadIcon;
     float time = 0;
-    private void LateUpdate()
+    private void FixedUpdate()
     {
         Collider2D[] hits = Physics2D.OverlapBoxAll(transform.position, Vector2.one, 0, -1);
-        if (hits.Length >= 3)
+        if (hits.Length >= 2)
         {
             time += Time.deltaTime;
             foreach(var hit in hits)

@@ -29,14 +29,15 @@ public class ActorMovement : ActorComponent
     private void FixedUpdate() { Move(); }
 
     private void Move() { transform.Translate(this.direction * this.speed * Time.fixedDeltaTime); }
+    private void LateUpdate()
+    {
+        isCollide = false;
+    }
+    bool isCollide = false;
     private void OnCollisionEnter2D(Collision2D other)
     {
-        //if (other.gameObject.CompareTag("Player"))
-        //{
-
-        //}
-        //else
+        if (isCollide) return;
+        isCollide = true;
         this.direction = Vector2.Reflect(this.direction, other.contacts[0].normal);
-        //Debug.Log("Collide", other.gameObject);
     }
 }
